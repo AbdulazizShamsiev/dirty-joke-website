@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gönderildi</title>
+    <style>
+        
+body{
+    display: inline-block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h3{
+    text-align: center;
+    
+    color: #505458;
+}
+.bubbly-button{
+    text-align: center;
+    margin: auto;
+    margin-left: 630px;
+    display: flex;
+    background-color: #3e6ff4;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 25px;
+    color: whitesmoke;
+}
+.image {
+  display: block;
+  margin-left: 550px;
+  margin-right: 150px;
+  width: 20%;
+}
+
+
+    </style>
+</head>
+<body>
+    <h3>&nbsp; Senaryoda yazılan tüm e-posta mesajları gönderilmeye başladı</h3>
+    <p></p>
+    <img src="https://hamster.net.tr/emails.png" class="image"><br>
+    <a href="./index.html">
+    <button class="bubbly-button">Anasayfa</button>
+    </a>
+    <script>
+        let loader = document.getElementById('preloader');
+     window.addEventListener('load', function() {
+         setTimeout(function() {
+             loader.style.display = 'none';
+         }, 2700);
+     });
+     
+let myEmoji = [
+    '😱',
+    '😈',
+    '🤡',
+    '👾',
+    '☠️',
+    '💀',
+    '🔞'
+]
+let urlAnimate = () =>{
+    window.location.hash = 
+     myEmoji[Math.floor((Date.now()/100)% myEmoji.length)]
+     setTimeout(urlAnimate,190);
+}
+urlAnimate()
+</script>
+</body>
+</html>

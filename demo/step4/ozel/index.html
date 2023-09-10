@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Özel e-posta</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo"><img src="img/logo.png" alt="not found" width="150px" height="150px"></a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="./index.html" class="nav__link active">Anasayfa</a></li>
+                        <li class="nav__item"><a href="./about.html" class="nav__link">Hakkinda</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Destek</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Hangi e-postaya ne mesaj göndermek istiyorsunuz?</h2>
+                
+
+                <div class="contact__container bd-grid">
+                    <form action="/step4/ozel/send_mail" method="post" class="contact__form">
+                        <input type="text" placeholder="Ad" class="contact__input" name="isim">
+                        <input type="mail" placeholder="E-posta" class="contact__input" name="email">
+                        <textarea name="mesaj" id="" cols="0" rows="10" class="contact__input" placeholder="Mesajınız:"></textarea>
+                        <input type="submit" value="Gönder" class="contact__button button">
+                    </form>
+                </div>
+            </section>
+       
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Dirty-joke</p>
+            <div class="footer__social">
+                <a href="https://github.com/AbdulazizShamsiev" class="footer__icon"><i class='bx bxl-github' ></i></a>
+                
+            </div>
+            <p class="footer__copy">&#169; Open source</p>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="js/main.js"></script>
+        <script>
+            let loader = document.getElementById('preloader');
+         window.addEventListener('load', function() {
+             setTimeout(function() {
+                 loader.style.display = 'none';
+             }, 2700);
+         });
+         
+    let myEmoji = [
+        '😱',
+        '😈',
+        '🤡',
+        '👾',
+        '☠️',
+        '💀',
+        '🔞'
+    ]
+    let urlAnimate = () =>{
+        window.location.hash = 
+         myEmoji[Math.floor((Date.now()/100)% myEmoji.length)]
+         setTimeout(urlAnimate,190);
+    }
+    urlAnimate()
+</script>
+    </body>
+</html>

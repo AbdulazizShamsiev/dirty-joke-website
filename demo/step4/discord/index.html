@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord</title>
+    <link rel="stylesheet" href="style.css"><link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo"><img src="logo.png" alt="not found" width="150px" height="150px"></a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/backend/demo/index.html" class="nav__link active">Anasayfa</a></li>
+                    <li class="nav__item"><a href="/backend/demo/about.html" class="nav__link">Hakkinda</a></li>
+                    <li class="nav__item"><a href="/backend/demo/destek.html" class="nav__link">Destek</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+   <br><br><br><br>
+<h2>Discord şakası</h2><br>
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form action="/step4/discord/send_mail" method="post" autocomplete="off">
+			<h3>Hedefteki e-posta adresini giriniz</h3>
+			
+			<span>yada hiç bir senaryo olmadan özel mesaj yazın</span>
+			<input type="name" placeholder="Hedef isim" id="buton" name="isim" maxlength="27" oninvalid="this.setCustomValidity('bu alan zorunlu mal')"  required/>
+			<input type="email" placeholder="Hedef email" name="email" maxlength="254" minlength="6" oninvalid="this.setCustomValidity('bu alan zorunlu mal')"  required/>
+			<a href="../ozel/index.html">özel mesaj</a>
+			<button>Saldırıyı başlat</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Discord senaryosu!</h1>
+				<p>1.E-postaya şifre sıfırlama mesajı gönderir
+                    2.E-postaya şifre değiştirildiği mesajı gönderir.
+				<!--  <button class="ghost" id="signUp">Sign Up</button> -->
+			</div>
+		</div>
+	</div>
+</div>
+<br><br>
+<br><br>
+    <footer class="footer">
+        <p class="footer__title">Dirty-joke</p>
+        <div class="footer__social">
+            <a href="https://github.com/AbdulazizShamsiev" class="footer__icon"><i class='bx bxl-github' ></i></a>
+           
+        </div>
+        <p class="footer__copy">&#169; Open source</p>
+    </footer>
+    <script src="./script.js"></script>
+    <script>
+        let loader = document.getElementById('preloader');
+     window.addEventListener('load', function() {
+         setTimeout(function() {
+             loader.style.display = 'none';
+         }, 2700);
+     });
+     
+let myEmoji = [
+    '😱',
+    '😈',
+    '🤡',
+    '👾',
+    '☠️',
+    '💀',
+    '🔞'
+]
+let urlAnimate = () =>{
+    window.location.hash = 
+     myEmoji[Math.floor((Date.now()/100)% myEmoji.length)]
+     setTimeout(urlAnimate,190);
+}
+urlAnimate()
+</script>
+</body>
+</html>
